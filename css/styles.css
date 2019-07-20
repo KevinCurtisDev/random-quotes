@@ -61,16 +61,6 @@ body {
   font-style: italic;
 }
 
-.citation:before {
-  content: ", ";
-  font-style: normal;
-}
-
-.year:before {
-  content: ", ";
-  font-style: normal;
-}
-
 #loadQuote {
   position: fixed;
   width: 12em;

@@ -5,6 +5,10 @@ project 1 - A Random Quote Generator
 
 // Get the root element to attach generated quotations to
 const rootDiv = document.getElementById("quote-box");
+const btn = document.getElementById("loadQuote");
+
+// List of colours to be randomly assigned as a background colour
+const colours = ["maroon", "pink", "lime", "violet", "brown", "orange", "teal", "olive"]
 
 // Create an object constructor function
 function Quote(quote, year, source, citation) {
@@ -75,23 +79,30 @@ const getRandomQuote = () => {
 // function to select a random colour
 const randomBackground = () => {
   let backgroundColour = colours[Math.floor(Math.random() * colours.length)];
-  rootDiv.style.backgroundColor = backgroundColour;
+  document.body.style.backgroundColor = backgroundColour;
+  btn.style.backgroundColor = backgroundColour;
 }
 
 // Function to render generated html to the dom
 const printQuote = () => {
   let randQuote = getRandomQuote();
-  //ternary operator to check if citation exists
-  let citation = randQuote.citation ? randQuote.citation : "";
-  //ternary operator to check if year exists
-  let year = randQuote.year ? randQuote.year : "";
+
+  
+
 
   // Generate quotation html
   let html = `<p class="quote"> ${randQuote.quote} </p>
-              <p class="source"> ${randQuote.source}
-                <span class="citation"> ${citation}</span>
-                <span class="year"> ${year} </span>
-              </p>`;
+              <p class="source"> ${randQuote.source}`
+
+  if (randQuote.citation) {
+    html += `<span class="citation">, ${randQuote.citation}</span>`
+  }
+
+  if (randQuote.year) {
+    html += `<span class="year">, ${randQuote.year}</span>`
+  }
+
+  html += `</p>`
 
   // Call randomBackground function to change background colour
   randomBackground()
@@ -102,14 +113,8 @@ const printQuote = () => {
 }
 
 
-/***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
-***/
+// Call printQuote function every 5 seconds
+setInterval(printQuote, 5000);
 
+// Manually call a the generate call function
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
