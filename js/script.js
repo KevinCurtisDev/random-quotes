@@ -87,8 +87,6 @@ const randomBackground = () => {
 const printQuote = () => {
   let randQuote = getRandomQuote();
 
-  
-
 
   // Generate quotation html
   let html = `<p class="quote"> ${randQuote.quote} </p>
