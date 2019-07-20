@@ -3,28 +3,72 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
+
+// Create an object constructor function
+function Quote(quote, year, source, citation) {
+  this.quote = quote;
+  this.year = year;
+  this.source = source;
+  this.citation = citation;
+}
+
+/********************** CREATE INDIVIDUAL OBJECTS *************************/
+
+const quote1 = new Quote(
+  "Whether you think you can, or think you can't, you're probably right.",
+  1863,
+  "Henry Ford",
+  "wikipedia"
+)
+
+const quote2 = new Quote(
+  "Keep away from people who try to belittle your dreams. Small people always do that, but the really great ones make you feel that you, too, can become great.",
+  1835,
+  "Mark Twain"
+)
+
+const quote3 = new Quote(
+  "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+  1847,
+  "Thomas Edison"
+)
+
+const quote4 = new Quote(
+  "I am afraid we must make the world honest before we can honestly say to our children that honesty is the best policy.",
+  1856,
+  "George Bernard Shaw"
+)
+
+const quote5 = new Quote(
+  "Surround yourself with only people who are going to lift you higher.",
+  1954,
+  "Oprah Winfrey"
+)
+
+const quote6 = new Quote(
+  "The simple act of paying attention can take you a long way.",
+  1964,
+  "Keanu Reeves"
+)
+
+/*************************************************************************/
+
+// Array of quote objects
+const quotes = [
+  quote1,
+  quote2,
+  quote3,
+  quote4,
+  quote5,
+  quote6
+]
 
 
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
-***/
-
-
-
-
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
-
-
+// Function to select a random quote
+const getRandomQuote = () => {
+  let num = Math.floor(Math.random() * quotes.length);
+  return quotes[num];
+}
 
 
 /***
@@ -39,6 +83,7 @@ project 1 - A Random Quote Generator
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
+
 
 
 
