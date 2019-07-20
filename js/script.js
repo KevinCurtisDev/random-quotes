@@ -72,6 +72,12 @@ const getRandomQuote = () => {
   return quotes[num];
 }
 
+// function to select a random colour
+const randomBackground = () => {
+  let backgroundColour = colours[Math.floor(Math.random() * colours.length)];
+  rootDiv.style.backgroundColor = backgroundColour;
+}
+
 // Function to render generated html to the dom
 const printQuote = () => {
   let randQuote = getRandomQuote();
