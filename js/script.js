@@ -11,11 +11,12 @@ const btn = document.getElementById("loadQuote");
 const colours = ["maroon", "pink", "lime", "violet", "brown", "orange", "teal", "olive"]
 
 // Create an object constructor function
-function Quote(quote, year, source, citation) {
+function Quote(quote, year, source, citation, tag) {
   this.quote = quote;
   this.year = year;
   this.source = source;
   this.citation = citation;
+  this.tag = tag;
 }
 
 /********************** CREATE INDIVIDUAL OBJECTS *************************/
@@ -24,7 +25,8 @@ const quote1 = new Quote(
   "Whether you think you can, or think you can't, you're probably right.",
   1863,
   "Henry Ford",
-  "wikipedia"
+  "wikipedia",
+  "Common sense"
 )
 
 const quote2 = new Quote(
@@ -36,7 +38,8 @@ const quote2 = new Quote(
 const quote3 = new Quote(
   "Many of life's failures are people who did not realize how close they were to success when they gave up.",
   1847,
-  "Thomas Edison"
+  "Thomas Edison",
+  "inventors"
 )
 
 const quote4 = new Quote(
@@ -48,13 +51,15 @@ const quote4 = new Quote(
 const quote5 = new Quote(
   "Surround yourself with only people who are going to lift you higher.",
   1954,
-  "Oprah Winfrey"
+  "Oprah Winfrey",
+  "inspirational"
 )
 
 const quote6 = new Quote(
   "The simple act of paying attention can take you a long way.",
   1964,
-  "Keanu Reeves"
+  "Keanu Reeves",
+  "Common sense"
 )
 
 /*************************************************************************/
@@ -100,6 +105,10 @@ const printQuote = () => {
     html += `<span class="year">, ${randQuote.year}</span>`
   }
 
+  if (randQuote.tag) {
+    html += `<span>, ${randQuote.tag}</span>`
+  }
+
   html += `</p>`
 
   // Call randomBackground function to change background colour
@@ -112,7 +121,8 @@ const printQuote = () => {
 
 
 // Call printQuote function every 5 seconds
-setInterval(printQuote, 5000);
+setInterval(printQuote, 10000);
 
 // Manually call a the generate call function
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+btn.addEventListener("click", printQuote, false);
+
