@@ -29,6 +29,78 @@ To run the project locally:
 * CSS3
 * Vanilla JavaScript
 
+## Sample code
+
+The following code block sets up a constuctor function. It then instantiates a number of objects and stores those objects in a list for later use:
+
+```JavaScript
+
+// Create an object constructor function
+function Quote(quote, year, source, citation, tag) {
+  this.quote = quote;
+  this.year = year;
+  this.source = source;
+  this.citation = citation;
+  this.tag = tag;
+}
+
+/********************** CREATE INDIVIDUAL OBJECTS *************************/
+
+const quote1 = new Quote(
+  "Whether you think you can, or think you can't, you're probably right.",
+  1863,
+  "Henry Ford",
+  "wikipedia",
+  "Common sense"
+)
+
+const quote2 = new Quote(
+  "Keep away from people who try to belittle your dreams. Small people always do that, but the really great ones make you feel that you, too, can become great.",
+  1835,
+  "Mark Twain"
+)
+
+const quote3 = new Quote(
+  "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+  1847,
+  "Thomas Edison",
+  "inventors"
+)
+
+const quote4 = new Quote(
+  "I am afraid we must make the world honest before we can honestly say to our children that honesty is the best policy.",
+  1856,
+  "George Bernard Shaw"
+)
+
+const quote5 = new Quote(
+  "Surround yourself with only people who are going to lift you higher.",
+  1954,
+  "Oprah Winfrey",
+  "inspirational"
+)
+
+const quote6 = new Quote(
+  "The simple act of paying attention can take you a long way.",
+  1964,
+  "Keanu Reeves",
+  "Common sense"
+)
+
+/*************************************************************************/
+
+// Array of quote objects
+const quotes = [
+  quote1,
+  quote2,
+  quote3,
+  quote4,
+  quote5,
+  quote6
+]
+
+```
+
 ### sources
 
 * CSS file from treehouse
